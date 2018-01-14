@@ -15,7 +15,7 @@ REACTOR_SCRAM_DURATION = 180
 -- the duration of the scram state of the reactor in seconds
 REACTOR_STARTING_DURATION = 30
 -- the duration of the starting state of the reactor in seconds
-
+CALCULATE_NEIGHBOURS = true
 
 ---------------------------------
 -- REACTOR STATES AND EFFECTS
@@ -107,14 +107,16 @@ script.on_event(defines.events.on_tick, function(event)
 	
 		-- registered tick for update event of connected reactors list
 		if event.tick == global.tick_update_connected_reactors then
-			logging("---------------------------------------------------------------")
-			logging("Updating connected reactors list")
-			logging("Tick: " .. event.tick)
-			logging("---------------------------------------------------------------")
-			for i,reactor in pairs(global.reactors) do
-				build_connected_reactors_list(reactor)
-			end			
-			logging("")
+			if CALCULATE_NEIGHBOURS == true then
+				logging("---------------------------------------------------------------")
+				logging("Updating connected reactors list")
+				logging("Tick: " .. event.tick)
+				logging("---------------------------------------------------------------")
+				for i,reactor in pairs(global.reactors) do
+					build_connected_reactors_list(reactor)
+				end			
+				logging("")
+			end	
 		end
 	
 		-- regular update cycle
