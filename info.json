@@ -1,0 +1,10 @@
+{
+	"name": "RealisticReactors",
+	"version": "1.0.0",
+	"title": "RealisticReactors",
+	"author": "IngoKnieto",
+	"description": "This mod adds a modified nuclear reactor and a cooling tower. The nuclear reactor explodes when it overheats (temperature >= 999°). It comes with a circuit interface, which is outputting the reactor state and content, and is used to send control signals to the reactor. The cooling tower converts steam and hot water back to cold water.",
+	"homepage": "",
+	"factorio_version": "0.16",
+	"dependencies": ["base >= 0.16.0"]
+}
