@@ -1,6 +1,6 @@
 {
 	"name": "RealisticReactors",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"title": "RealisticReactors",
 	"author": "IngoKnieto",
 	"description": "This mod adds a more realistic nuclear reactor and a cooling tower. The nuclear reactor is controllable via its integrated circuit interface. It also has an Emergency Core Cooling System (ECCS), which can be used to cool the reactor core with water. If it reaches 999°, a nuclear meltdown is caused and the reactor will explode producing a radioactive cloud. The cooling tower converts steam and hot water back to cold water, thus can be used in the different reactor cooling processes.",
