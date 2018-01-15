@@ -16,6 +16,9 @@ REACTOR_SCRAM_DURATION = 180
 REACTOR_STARTING_DURATION = 30
 -- the duration of the starting state of the reactor in seconds
 CALCULATE_NEIGHBOURS = true
+-- workaround for lag on maps with a lot of heat pipes
+-- see forum thread --> known issues for details
+-- https://forums.factorio.com/viewtopic.php?f=93&t=56621&sid=72f78c006531183a3492fde1673a7259
 
 ---------------------------------
 -- REACTOR STATES AND EFFECTS
@@ -689,12 +692,13 @@ function replace_reactor(reactor, new_reactor_entity_name)
 	
 	-- transfer burner heat and remaining fuel in burner
 	if reactor.state == "stopped" or reactor.state == "scramed" then
-		-- do nothing (don't transfer burner heat to a stopped reactor)
-		logging("-> burner settings not transferred, state: stopped")
+		-- do nothing (don't transfer burner heat to a stopped or scramed reactor)
+		logging("-> burner settings not transferred, state: stopped or scramed")
 	else
 		-- transfer current burner settings
 		if reactor.core.burner.heat > 0 then
-			new_reactor_core.burner.currently_burning = game.item_prototypes["uranium-fuel-cell"]
+			--new_reactor_core.burner.currently_burning = game.item_prototypes["uranium-fuel-cell"]
+			new_reactor_core.burner.currently_burning = reactor.core.burner.currently_burning
 			new_reactor_core.burner.heat = reactor.core.burner.heat
 			logging("-> updated burner heat: " .. new_reactor_core.burner.heat)
 			new_reactor_core.burner.remaining_burning_fuel = reactor.core.burner.remaining_burning_fuel
@@ -718,14 +722,17 @@ function replace_reactor(reactor, new_reactor_entity_name)
 	
 	-- transfer fuel cells and empty fuel cells
 	if reactor.core.get_fuel_inventory().is_empty() == false then
-		local fuel = reactor.core.get_fuel_inventory().find_item_stack("uranium-fuel-cell")
-		logging("-> moved fuel cells, count: " .. new_reactor_core.get_fuel_inventory().insert(fuel))
+		-- get current fuel cell
+		local fuel = reactor.core.get_inventory(defines.inventory.fuel)
+		logging("-> fuel cell name: " .. fuel[1].name)
+		logging("-> moved fuel cells, count: " .. new_reactor_core.get_fuel_inventory().insert(fuel[1]))
 	else
 		logging("-> no fuel cells moved")
 	end
 	if reactor.core.get_burnt_result_inventory().is_empty() == false then
-		local usedfuel = reactor.core.get_burnt_result_inventory().find_item_stack("used-up-uranium-fuel-cell")
-		logging("-> moved used fuel cells, count: " .. new_reactor_core.get_burnt_result_inventory().insert(usedfuel))
+		local usedfuel = reactor.core.get_inventory(defines.inventory.burnt_result)
+		logging("-> used fuel cell name: " .. usedfuel[1].name)
+		logging("-> moved used fuel cells, count: " .. new_reactor_core.get_burnt_result_inventory().insert(usedfuel[1]))
 	else
 		logging("-> no used fuel cells moved")
 	end
