@@ -1,0 +1,6 @@
+version 1.0.1	(2018-01-15)
+- compatibility with nuclear fuel cells from other mods added
+
+version 1.0.0	(2018-01-14)
+- initial release
+
