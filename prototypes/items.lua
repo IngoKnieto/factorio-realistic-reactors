@@ -66,13 +66,13 @@ data:extend({
   -- Cooling Tower
   {
     type = "item",
-    name = "cooling-tower",
+    name = "rr-cooling-tower",
     icon = "__RealisticReactors__/graphics/icons/cooling-tower.png",
 	icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "energy",
     order = "b[steam-power]-d[cooling-tower]",
-    place_result = "cooling-tower",
+    place_result = "rr-cooling-tower",
     stack_size = 10
   }
  })

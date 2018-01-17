@@ -776,11 +776,11 @@ reactor_eccs =
 cooling_tower =
 {
   type = "furnace",
-  name = "cooling-tower",
+  name = "rr-cooling-tower",
   icon = "__RealisticReactors__/graphics/icons/cooling-tower.png",
   icon_size = 32,
   flags = {"placeable-neutral", "placeable-player", "player-creation"},
-  minable = {hardness = 0.2, mining_time = 0.5, result = "cooling-tower"},
+  minable = {hardness = 0.2, mining_time = 0.5, result = "rr-cooling-tower"},
   max_health = 500,
   corpse = "medium-remnants",
   resistances =
@@ -847,7 +847,7 @@ cooling_tower =
 cooling_tower_steam =
 {
   type = "furnace",
-  name = "cooling-tower-steam",
+  name = "rr-cooling-tower-steam",
   icon = cooling_tower.icon,
   icon_size = 32,
   flags = {"not-blueprintable", "not-deconstructable"},

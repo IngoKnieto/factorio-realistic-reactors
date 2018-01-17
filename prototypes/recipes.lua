@@ -31,7 +31,7 @@ data:extend({
  -- Cooling Tower
   {
     type = "recipe",
-    name = "cooling-tower",
+    name = "rr-cooling-tower",
     enabled = false,
     energy_required = 20,
     ingredients =
@@ -41,7 +41,7 @@ data:extend({
       {"pipe", 100},
       {"pump", 10}
     },
-    result = "cooling-tower"
+    result = "rr-cooling-tower"
   },
    
   -- OTHER RECIPIES
@@ -91,7 +91,7 @@ data:extend({
  -- Cooling tower steam dummy recipe
   {
     type = "recipe",
-    name = "cooling-tower-steam",
+    name = "rr-cooling-tower-steam",
     category = "steaming",
     enabled = true,
     hidden = true,
