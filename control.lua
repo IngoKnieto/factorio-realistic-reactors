@@ -59,8 +59,8 @@ REACTOR_ENTITY_NAME_3 = "realistic-reactor-3"
 REACTOR_ENTITY_NAME_4 = "realistic-reactor-4"
 INTERFACE_ENTITY_NAME = "realistic-reactor-interface"
 BOILER_ENTITY_NAME = "realistic-reactor-eccs"
-TOWER_ENTITY_NAME = "cooling-tower"
-STEAM_ENTITY_NAME = "cooling-tower-steam"
+TOWER_ENTITY_NAME = "rr-cooling-tower"
+STEAM_ENTITY_NAME = "rr-cooling-tower-steam"
 HEAT_PIPE_ENTITY_NAME = "heat-pipe"
 SIGNAL_CORE_TEMP = {type="virtual", name="signal-reactor-core-temp"}
 SIGNAL_STATE_STOPPED = {type="virtual", name="signal-state-stopped"}
