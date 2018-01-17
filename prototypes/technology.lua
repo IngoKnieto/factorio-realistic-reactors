@@ -13,7 +13,7 @@ data:extend({
       },	  
       {
         type = "unlock-recipe",
-        recipe = "cooling-tower"
+        recipe = "rr-cooling-tower"
       }
     },
     prerequisites = {"nuclear-power","circuit-network"},
