@@ -1,0 +1,16 @@
+{
+  "item":
+  [
+    ["cooling-tower", "rr-cooling-tower"]
+  ], 
+  "entity":
+  [
+    ["cooling-tower", "rr-cooling-tower"],
+	["cooling-tower-steam", "rr-cooling-tower-steam"]
+  ],
+  "recipes":
+  [
+    ["cooling-tower", "rr-cooling-tower"],
+	["cooling-tower-steam", "rr-cooling-tower-steam"]
+  ]   
+}
